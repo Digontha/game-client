@@ -1,11 +1,15 @@
+import { Banner } from "../../Shared/Banner/Banner";
 import Navbar from "../../Shared/Navbar/Navbar";
+import Games from "./Games/Games";
 
 
 const Home = () => {
     return (
         <div>
-            Hello i am from Home
+            
             <Navbar></Navbar>
+            <Banner></Banner>
+            <Games></Games>
         </div>
     );
 };
