@@ -6,9 +6,9 @@ const GamesCard = ({game}) => {
     const {title,thumb,salePrice} = game||{};
     return (
        <>
-       <div className="max-w-[350px] space-y-4 rounded-lg  p-6 shadow-lg md:w-[350px] bg-[#2D3842] text-white mb-2">
+       <div className="max-w-[350px] space-y-4 rounded-lg  p-6 shadow-lg md:w-[350px] bg-[#2D3842] h-[400px] text-white mb-2">
             <img alt="card navigate ui" className="w-[302px] h-[113px]  rounded-lg " src={thumb} />
-            <div className="grid gap-2">
+            <div className="grid gap-2 h-[130px]">
                 <h1 className="text-lg font-semibold ">{title}</h1>
                 <p className="text-sm text-gray-500 dark:text-gray-400">This is a brief description of the product. It highlights the key features and benefits.</p>
                 <div className="text-lg font-semibold  ">${salePrice}</div>
