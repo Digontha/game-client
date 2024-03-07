@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const navLinks = <>
         <NavLink
-            to="/messages"
+            to="/"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : "text-xl"
             }
@@ -55,10 +55,7 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-end">
 
-                        <button className="text-xl w-32 h-12 bg-black text-white relative overflow-hidden group z-10"><span className="absolute bg-white rotate-12 -inset-8 group-hover:duration-300 duration-700 scale-x-0 group-hover:scale-x-100 origin-left transform transition-transform"></span><span className="absolute bg-[#2E3D29] rotate-12 -inset-8 group-hover:duration-700 duration-500 scale-x-0 group-hover:scale-x-100 origin-left transform transition-transform"></span><span className="absolute bg-[#2B501C] rotate-12 -inset-8 group-hover:duration-500 duration-300 scale-x-0 group-hover:scale-x-50 origin-left transform transition-transform"></span><span className="absolute opacity-0 group-hover:opacity-100 duration-100 group-hover:duration-700 ease-out text-center z-10 text-white">Login</span>Explore</button>
-
-
-
+                       <Link to="/login"> <button className="text-xl w-32 h-12 bg-black text-white relative overflow-hidden group z-10"><span className="absolute bg-white rotate-12 -inset-8 group-hover:duration-300 duration-700 scale-x-0 group-hover:scale-x-100 origin-left transform transition-transform"></span><span className="absolute bg-[#2E3D29] rotate-12 -inset-8 group-hover:duration-700 duration-500 scale-x-0 group-hover:scale-x-100 origin-left transform transition-transform"></span><span className="absolute bg-[#2B501C] rotate-12 -inset-8 group-hover:duration-500 duration-300 scale-x-0 group-hover:scale-x-50 origin-left transform transition-transform"></span><span className="absolute opacity-0 group-hover:opacity-100 duration-100 group-hover:duration-700 ease-out text-center z-10 text-white">Login</span>Explore</button></Link>
 
                     </div>
                 </div>
