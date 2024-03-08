@@ -33,7 +33,7 @@ const Login = () => {
                 </div>
             </div>
             <div className='lg:w-1/2'>
-                <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDU3Njc3NjM5NTI1NzM2/hottest-female-video-game-characters.png" alt="" />
+                <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDU3Njc3NjM5NTI1NzM2/hottest-female-video-game-characters.png"alt="" />
             </div>
         </div>
 

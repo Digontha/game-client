@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import swal from "sweetalert";
+import useAxiosPublic from "../../Axios/useAxiosPublic";
 
 const Register = () => {
 
     const { createUser, googleLogin } = useContext(AuthContext)
-    // const axiosPublic = useAxiosPublic()
-//   const navigate = useNavigate()
+    const axiosPublic = useAxiosPublic()
+  const navigate = useNavigate()
   const handleRegister = (e) => {
 
     e.preventDefault();
@@ -30,15 +31,15 @@ const Register = () => {
           updateProfile(res.user, { displayName: name, photoURL: image })
             .then(() => {
                 console.log(res);
-            //   const userData = {
-            //     email,
-            //     name,
-            //     image,
-            //     subscribe: false,
-            //   }
-            //   axiosPublic.post("/users", userData)
-            //     .then(res => console.log(res.data))
-            //   navigate("/")
+              const userData = {
+                email,
+                name,
+                image,
+                subscribe: false,
+              }
+              axiosPublic.post("/users", userData)
+                .then(res => console.log(res.data))
+              navigate("/")
             })
           e.target.reset()
         })
@@ -47,9 +48,6 @@ const Register = () => {
           swal("error", "something went wrong", "error");
         })
     }
-
-
-
 
   }
   const handleGoogle = () => {
