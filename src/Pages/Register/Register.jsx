@@ -26,7 +26,7 @@ const Register = () => {
     } else {
       createUser(email, password, name, image)
         .then(res => {
-          console.log(res.user);
+          console.log(res);
           swal("success", "Your account create successfully", "success");
           updateProfile(res.user, { displayName: name, photoURL: image })
             .then(() => {
