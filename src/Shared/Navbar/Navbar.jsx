@@ -20,7 +20,7 @@ const Navbar = () => {
 
 
         <NavLink
-            to="/messages"
+            to="/about"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : "text-xl"
             }
