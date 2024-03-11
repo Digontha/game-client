@@ -7,7 +7,7 @@ const useMyCart = () => {
     const {data: MyCart = [],isPending: loading,refetch} = useQuery({
         queryKey: ['MyCart'],
         queryFn: async() =>{
-            const res =await axiosPublic.get('/carts');
+            const res = await axiosPublic.get('/carts');
             return res.data;
         }
     })
