@@ -10,7 +10,7 @@ const useMyCart = () => {
     const {data: MyCart = [],isPending: loading,refetch} = useQuery({
         queryKey: ['MyCart'],
         queryFn: async() =>{
-            const res = await axiosPublic.get(`/carts?email=${user.email}`);
+            const res = await axiosPublic.get(`/carts?email=${user?.email}`);
             return res.data;
         }
     })
