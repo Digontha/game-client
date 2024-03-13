@@ -2,11 +2,19 @@ import useAxiosPublic from "../../../Axios/useAxiosPublic";
 import useMyCart from "../../../Hook/useMyCart";
 
 const MyCart = () => {
-    const [MyCart] = useMyCart()
+    const [MyCart,,refetch] = useMyCart()
     const axiosPublic=useAxiosPublic()
     console.log(MyCart);
+
     const handleDeleteCart = (id) => {
-          
+          axiosPublic.delete(`/carts/${id}`)
+          .then(res=>{
+            console.log(res.data);
+            refetch()
+          })
+          .catch(err=>{
+            console.log(err);
+          })
     }
     return (
         <>
