@@ -1,8 +1,13 @@
+import useAxiosPublic from "../../../Axios/useAxiosPublic";
 import useMyCart from "../../../Hook/useMyCart";
 
 const MyCart = () => {
     const [MyCart] = useMyCart()
+    const axiosPublic=useAxiosPublic()
     console.log(MyCart);
+    const handleDeleteCart = (id) => {
+          
+    }
     return (
         <>
             <div className="flex flex-col w-full">
@@ -26,7 +31,7 @@ const MyCart = () => {
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-white dark:text-gray-200">${cartItem?.salePrice}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-white dark:text-gray-200">{cartItem?.email}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                    <button type="button" className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Delete</button>
+                                                    <button onClick={()=>{handleDeleteCart(cartItem?._id)}} type="button" className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Delete</button>
                                                 </td>
                                             </tr>
                                         </>)
